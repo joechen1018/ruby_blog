@@ -7,6 +7,9 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3'
 end
+group :test, :production do
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
