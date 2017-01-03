@@ -8,14 +8,14 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 	end
 	def new
-		@article = Article.new
+		#@article = current_user.articles.build
 	end
 	def edit
 	  @article = Article.find(params[:id])
 	end
 	def create
 		@article = Article.new(article_params)
-
+		@article.user = current_user
 		if @article.save
 			redirect_to @article
 		else
@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 	end
 	def update
 	  @article = Article.find(params[:id])
-	 
+	  @article.user = current_user
 	  if @article.update(article_params)
 	    redirect_to @article
 	  else
