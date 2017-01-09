@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 	end
 	def new
-		#@article = current_user.articles.build
+		@article = current_user.articles.build
 	end
 	def edit
 	  @article = Article.find(params[:id])
