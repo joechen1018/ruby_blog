@@ -7,6 +7,11 @@
   </li>
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path)  %>  
+  <%= 
+  link_to('Login', new_user_session_path)  
+  %>
+  <br>
+  <a href="#" class="oauth-signin">Sign in with Google</a>
+
   </li>
 <% end %>
